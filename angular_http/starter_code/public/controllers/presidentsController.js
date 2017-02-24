@@ -56,7 +56,7 @@
     function uncover(id) {
       console.log(id)
       $http
-      .put('/api/presidents/'+ id, {uncovered: true} )
+      .put('/api/presidents/'+ id, {uncovered: !president.uncovered} )
       .then(function(res) {
         console.log(res)
       }, function(err) {
