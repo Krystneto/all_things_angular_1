@@ -18,7 +18,12 @@
 		vm.deleteTodo = deleteTodo;
 		vm.completedTodos = completedTodos;
 		vm.remainingTodos = remainingTodos;
-
+    vm.studyTips = [
+      {tips: "read books"},
+      {tips: "watch tutorials"},
+      {tips: "go to workshops"},
+      {tips: "just keep coding"}
+    ]
 		//function that allows us to add new todos to our todoList
 		function addTodo(){
 			vm.todoList.push({task: vm.text, done: false});
