@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="Museum">
+<head>
+  <title>Controllers Lab</title>
+</head>
+<body ng-controller="ExhibitController as exhibit">
+  <h1>{{exhibit.title}}</h1>
+  <h2>Exhibit:</h2>
+    <div>
+      <img ng-src={{exhibit.image}}>
+      <h3>{{exhibit.caption}}</h3>
+      <h3>By {{exhibit.author}}</h3>
+    </div>
+  <div ng-controller="OperationsController as operations">
+    <h2>General Info:</h2>
+      <h3>Hours:</h3>
+      <ul>
+        <li ng-repeat="hours in operations.schedule">{{hours.day}}: {{hours.time}}</li>
+      </ul>
+    <h3>Suggested Admissions</h3>
+      <ul>
+        <li ng-repeat="admission in operations.admissions">{{admission.age}}-{{admission.price}}</li>
+      </ul>
+  </div>
+  <div ng-controller="ContactController as contacts">
+    <h2>Donor Information</h2>
+    <h3>{{contacts.contact}} <a ng-href={{contacts.email}}>{{contacts.email}}</a> {{contacts.phone}}</h3>
+    <h3>Donation Amounts</h3>
+      <ul>
+        <li ng-repeat="donation in contacts.donations">{{donation.donation}}</li>
+      </ul>
+
+
+
+  <div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+
+  <script src="./js/app.js"></script>
+  <script src="./js/controllers/ContactController.js"></script>
+  <script src="./js/controllers/ExhibitController.js"></script>
+  <script src="./js/controllers/OperationsController.js"></script>
+</body>
+</html>
